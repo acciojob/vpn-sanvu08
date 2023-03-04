@@ -58,7 +58,11 @@ public class AdminServiceImpl implements AdminService {
 
         Country country = new Country();
 
-        if(countryName.equalsIgnoreCase("IND") || countryName.equalsIgnoreCase("USA")|| countryName.equalsIgnoreCase("JPN")|| countryName.equalsIgnoreCase("AUS")|| countryName.equalsIgnoreCase("CHI")){
+        if(countryName.equalsIgnoreCase("IND") ||
+                countryName.equalsIgnoreCase("USA")||
+                countryName.equalsIgnoreCase("JPN")||
+                countryName.equalsIgnoreCase("AUS")||
+                countryName.equalsIgnoreCase("CHI")){
             if(countryName.equalsIgnoreCase("IND")){
                 country.setCountryName(CountryName.IND);
                 country.setCode(CountryName.IND.toCode());
