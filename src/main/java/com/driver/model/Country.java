@@ -3,18 +3,21 @@
 
 package com.driver.model;
 
+
+import com.driver.model.CountryName;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "countries")
+@Table(name = "Country")
 public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private CountryName countryName;
+
     private String code;
 
     @OneToOne
@@ -23,7 +26,7 @@ public class Country {
 
     @ManyToOne
     @JoinColumn
-    ServiceProvider serviceProvider;
+    private ServiceProvider serviceProvider;
 
     public Country() {
     }
@@ -34,11 +37,6 @@ public class Country {
         this.code = code;
         this.user = user;
         this.serviceProvider = serviceProvider;
-    }
-
-    public Country(CountryName countryName, String code) {
-        this.countryName = countryName;
-        this.code = code;
     }
 
     public int getId() {
@@ -55,11 +53,6 @@ public class Country {
 
     public void setCountryName(CountryName countryName) {
         this.countryName = countryName;
-    }
-
-    public Country(CountryName countryName, ServiceProvider serviceProvider) {
-        this.countryName = countryName;
-        this.serviceProvider = serviceProvider;
     }
 
     public String getCode() {
